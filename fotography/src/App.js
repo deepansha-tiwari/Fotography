@@ -1,7 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import logoPt from './logoPt.png';
 import homeImage from './homeImage.JPG';
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 import './App.css';
 import ButtonAppBar from './ButtonAppBar'
@@ -21,8 +23,14 @@ function App(props) {
   return (
     <div className="App">
       <ButtonAppBar />
-      <img src={homeImage} alt="home-image" className={classes.image}/>
-          <h4> Welcome to Parth Tiwari Photography  </h4>
+    <Grid container>
+    <img src={logoPt} alt="home-image" />
+    </Grid>
+      
+      {/* <Button variant="outlined" color="#ffffff" className={classes.button}>
+        Gallery
+      </Button> */}
+          <h4>   </h4>
     </div>
   );
 }

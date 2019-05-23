@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import ParthTiwariLogo from './ParthTiwariLogo.png'
 
 
 const styles = {
@@ -26,6 +27,7 @@ const styles = {
   },
   button: {
     color: '#F2EFEF',
+    align: 'right',
 },
 };
 
@@ -38,9 +40,8 @@ function ButtonAppBar(props) {
           <IconButton className={classes.menuButton} aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.grow}>
-          Parth Tiwari
-          </Typography>
+          <img src={ParthTiwariLogo} alt="home-image" style={{height: '80px'}}/>
+
           <Button className={classes.button}>Nature</Button>
           <Button className={classes.button}>Architecture</Button>
           <Button className={classes.button}>About</Button>
