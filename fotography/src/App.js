@@ -14,7 +14,21 @@ const styles = {
   image: {
     width: '99rem',
     height: '45rem',
-  }
+  },
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+  },
+  icon: {
+    color: 'rgba(255, 255, 255, 0.54)',
+  },
 };
 function App(props) {
   
@@ -23,9 +37,29 @@ function App(props) {
   return (
     <div className="App">
       <ButtonAppBar />
-    <Grid container>
-    <img src={logoPt} alt="home-image" />
-    </Grid>
+
+
+/**
+This needs to change  */
+      <GridList cellHeight={180} className={classes.gridList}>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+          <ListSubheader component="div">December</ListSubheader>
+        </GridListTile>
+        {tileData.map(tile => (
+          <GridListTile key={tile.img}>
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+              title={tile.title}
+              subtitle={<span>by: {tile.author}</span>}
+              actionIcon={
+                <IconButton className={classes.icon}>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </GridListTile>
+        ))}
+      </GridList>
       
       {/* <Button variant="outlined" color="#ffffff" className={classes.button}>
         Gallery
